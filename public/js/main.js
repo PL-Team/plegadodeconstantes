@@ -7,8 +7,9 @@ $(document).ready(function() {
       out.className = "unhidden";
       
       // Import: Change: $('#input').val() -> source, i forget it, again 
-      var result = calculator.parse(source);
-      $('#output').html(JSON.stringify(result,undefined,2));
+      var tree = calculator.parse(source);
+      plegadoConstantes(tree);
+      $('#output').html(JSON.stringify(tree,undefined,2));
     } catch (e) {
       $('#output').html('<div class="error"><pre>\n' + String(e) + '\n</pre></div>');
     }
@@ -27,6 +28,52 @@ $(document).ready(function() {
   });
 
 });
+function plegadoConstantes(tree){
+	switch (tree.type){
+		case "BLOCK":
+		case "procedure":			
+			if(tree.hasOwnProperty("procs") && tree.procs != "NULL"){
+				plegadoConstantes(tree.procs);
+				alert("proc");
+			}
+			if(tree.hasOwnProperty("stat")){
+				for (var i in tree.stat.statement_list){
+					constantFolding(tree.stat.statement_list[i]);
+					alert("st");
+				}
+			}
+			break;
+		case "ASSIGMENT":	
+			break;
+		case "CALL":
+			break;
+		case "BEGIN":
+			break;
+		case "IF":
+			break;
+		case "IFELSE":
+			break;
+		case "ODD":
+			break;
+		case "==":
+		case "!=":
+		case "<=":
+		case "<":
+		case ">":
+		case ">=":
+		case "-":
+		case "+":
+		case "*":
+		case "/":
+		
+		break;
+		case "NUMBER":
+			break;
+		case "ID":
+			break;
+		}
+	}
+}
 
   
 
