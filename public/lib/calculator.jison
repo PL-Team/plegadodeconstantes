@@ -292,9 +292,9 @@ expression
         throw new Error("No se puede realizar operaciones con variables sin inicializar");
     }
     $$ = {
-    type: Number,
-    //left: $1,
-    //right: $3,
+    type: $2,
+    left: $1,
+    right: $3,
     value: $1.value + $3.value
     };
 }
@@ -304,9 +304,9 @@ expression
         throw new Error("No se puede realizar operaciones con variables sin inicializar");
     }
     $$ = {
-    type: Number,
-    //left: $1,
-    //right: $3,
+    type: $2,
+    left: $1,
+    right: $3,
     value: $1.value - $3.value
     };
 }
@@ -316,9 +316,9 @@ expression
         throw new Error("No se puede realizar operaciones con variables sin inicializar");
     }
     $$ = {
-    type: Number,
-    //left: $1,
-    //right: $3,
+    type: $2,
+    left: $1,
+    right: $3,
     value: $1.value * $3.value
     };
 }
@@ -329,9 +329,9 @@ expression
     }
     if ($3.value == 0) throw new Error("Division by zero, error!");
     $$ = {
-    type: Number,
-    //left: $1,
-    //right: $3,
+    type: $2,
+    left: $1,
+    right: $3,
     value: $1.value / $3.value
     };
 }
