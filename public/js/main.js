@@ -43,7 +43,16 @@ function plegadoConstantes(tree){
 			break;
 		case "=":
 			tree.left = tree.value;
-			alert(tree.value);
+			var num = {
+				type:"Number",
+				value:tree.value
+			}
+			var treeN = {
+				type: "=",
+				left: tree.right,
+				right: num
+			}
+			alert(JISON.stringify(treeN));
 			break;
 		case "CALL":
 			break;
