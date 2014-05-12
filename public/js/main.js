@@ -29,11 +29,12 @@ $(document).ready(function() {
 
 });
 function plegadoConstantes(tree){
+	
+	alert(tree.type);
 	switch (tree.type){
 		case "BLOCK":
 		case "procedure":			
 			if(tree.hasOwnProperty("procs")){
-				alert("entra");
 				plegadoConstantes(tree.procs);
 			}
 			if(tree.hasOwnProperty("stat")){
