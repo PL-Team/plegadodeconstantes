@@ -44,9 +44,7 @@ function plegadoConstantes(tree){
 					tree.stat.statement_list[i] = plegadoConstantes(tree.stat.statement_list[i]);
 				}
 			}else if(tree.hasOwnProperty("bloque")){
-				for (var i in tree.bloque.stat.statement_list){
-					tree.bloque.stat.statement_list[i] = plegadoConstantes(tree.bloque.stat.statement_list[i]);
-				}
+				plegadoConstantes(tree.bloque);
 			}
 			break;
 		case "=":
