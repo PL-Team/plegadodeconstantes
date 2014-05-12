@@ -33,6 +33,7 @@ function plegadoConstantes(tree){
 		case "BLOCK":
 		case "procedure":			
 			if(tree.hasOwnProperty("procs")){
+				alert("entra");
 				plegadoConstantes(tree.procs);
 			}
 			if(tree.hasOwnProperty("stat")){
