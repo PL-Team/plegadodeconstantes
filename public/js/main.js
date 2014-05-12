@@ -33,16 +33,15 @@ function plegadoConstantes(tree){
 		case "BLOCK":
 		case "procedure":			
 			if(tree.hasOwnProperty("procs") && tree.procs != "NULL"){
-				tree.procs = plegadoConstantes(tree.procs);
+				plegadoConstantes(tree.procs);
 			}
 			if(tree.hasOwnProperty("stat")){
 				for (var i in tree.stat.statement_list){
-					tree.stat.statement_list[i] = plegadoConstantes(tree.stat.statement_list[i]);
+					plegadoConstantes(tree.stat.statement_list[i]);
 				}
 			}
 			break;
 		case "=":
-			tree.left
 			var num = {
 				type:"Number",
 				value:tree.value
@@ -52,7 +51,7 @@ function plegadoConstantes(tree){
 				left: tree.right,
 				right: num
 			}
-			return tree;
+			tree.left = treeN;
 			break;
 		case "CALL":
 			break;
