@@ -52,7 +52,7 @@ function plegadoConstantes(tree){
 				left: tree.right,
 				right: num
 			}
-			alert(JISON.stringify(treeN));
+			alert(JSON.stringify(treeN));
 			break;
 		case "CALL":
 			break;
