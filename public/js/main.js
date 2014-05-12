@@ -42,7 +42,6 @@ function plegadoConstantes(tree){
 			}
 			break;
 		case "=":
-			tree.left = tree.value;
 			var num = {
 				type:"Number",
 				value:tree.value
@@ -52,7 +51,7 @@ function plegadoConstantes(tree){
 				left: tree.right,
 				right: num
 			}
-			alert(JSON.stringify(treeN));
+			tree = treeN;
 			break;
 		case "CALL":
 			break;
