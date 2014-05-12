@@ -29,16 +29,12 @@ $(document).ready(function() {
 
 });
 function plegadoConstantes(tree){
-	
-	
 	switch (tree.type){
 		case "BLOCK":
 		case "procedure":			
 			if(tree.hasOwnProperty("procs")&& tree.procs!="NULL"){
 				plegadoConstantes(tree.procs);
 			}
-			alert("acabo procedure");
-			alert(JSON.stringify(tree));
 			if(tree.hasOwnProperty("stat")){
 				for (var i in tree.stat.statement_list){
 					tree.stat.statement_list[i] = plegadoConstantes(tree.stat.statement_list[i]);
