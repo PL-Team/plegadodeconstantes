@@ -37,7 +37,7 @@ function plegadoConstantes(tree){
 			}
 			if(tree.hasOwnProperty("stat")){
 				for (var i in tree.stat.statement_list){
-					plegadoConstantes(tree.stat.statement_list[i]);
+					tree.stat.statement_list[i] = plegadoConstantes(tree.stat.statement_list[i]);
 				}
 			}
 			break;
@@ -52,6 +52,7 @@ function plegadoConstantes(tree){
 				right: num
 			}
 			tree.left = treeN;
+			return treeN
 			break;
 		case "CALL":
 			break;
