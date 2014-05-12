@@ -42,6 +42,7 @@ function plegadoConstantes(tree){
 			}
 			break;
 		case "=":
+			tree = null;
 			alert(tree.value);
 			break;
 		case "CALL":
