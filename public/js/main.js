@@ -71,7 +71,6 @@ function plegadoConstantes(tree){
 			break;
 		case "ID":
 			break;
-		}
 	}
 }
 
