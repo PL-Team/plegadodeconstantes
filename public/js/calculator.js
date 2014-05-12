@@ -286,9 +286,9 @@ case 25:
         throw new Error("No se puede realizar operaciones con variables sin inicializar");
     }
     this.$ = {
-    type: $$[$0-1],
-    left: $$[$0-2],
-    right: $$[$0],
+    type: Number,
+    //left: $$[$0-2],
+    //right: $$[$0],
     value: $$[$0-2].value + $$[$0].value
     };
 
@@ -298,9 +298,9 @@ case 26:
         throw new Error("No se puede realizar operaciones con variables sin inicializar");
     }
     this.$ = {
-    type: $$[$0-1],
-    left: $$[$0-2],
-    right: $$[$0],
+    type: Number,
+    //left: $$[$0-2],
+    //right: $$[$0],
     value: $$[$0-2].value - $$[$0].value
     };
 
@@ -310,9 +310,9 @@ case 27:
         throw new Error("No se puede realizar operaciones con variables sin inicializar");
     }
     this.$ = {
-    type: $$[$0-1],
-    left: $$[$0-2],
-    right: $$[$0],
+    type: Number,
+    //left: $$[$0-2],
+    //right: $$[$0],
     value: $$[$0-2].value * $$[$0].value
     };
 
@@ -323,9 +323,9 @@ case 28:
     }
     if ($$[$0].value == 0) throw new Error("Division by zero, error!");
     this.$ = {
-    type: $$[$0-1],
-    left: $$[$0-2],
-    right: $$[$0],
+    type: Number,
+    //left: $$[$0-2],
+    //right: $$[$0],
     value: $$[$0-2].value / $$[$0].value
     };
 
