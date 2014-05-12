@@ -30,7 +30,7 @@ $(document).ready(function() {
 });
 function plegadoConstantes(tree){
 	
-	alert(tree.type);
+	alert(JSON.stringify(tree));
 	switch (tree.type){
 		case "BLOCK":
 		case "procedure":			
