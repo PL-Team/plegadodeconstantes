@@ -33,7 +33,7 @@ get '/:selected?' do |selected|
   pp programs
   puts "selected = #{selected}"
   c  = PL0Program.first(:name => selected)
-  source = if c then c.source else "begin \n\ta = 5*7+9 \nend." end
+  source = if c then c.source else "var a;\nbegin \n\ta = 5*7+9 \nend." end
   erb :index, 
       :locals => { :programs => programs, :source => source }
 end
