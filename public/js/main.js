@@ -41,7 +41,7 @@ function plegadoConstantes(tree){
 				}
 			}
 			break;
-		case "=":
+		case "ASSING":
 			tree = {
 				type="=",
 				left=tree.left,
