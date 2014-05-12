@@ -34,16 +34,15 @@ function plegadoConstantes(tree){
 		case "procedure":			
 			if(tree.hasOwnProperty("procs") && tree.procs != "NULL"){
 				plegadoConstantes(tree.procs);
-				alert("proc");
 			}
 			if(tree.hasOwnProperty("stat")){
 				for (var i in tree.stat.statement_list){
 					plegadoConstantes(tree.stat.statement_list[i]);
-					alert("st");
 				}
 			}
 			break;
-		case "ASSIGMENT":	
+		case "ASSIGMENT":
+			alert(tree.value);
 			break;
 		case "CALL":
 			break;
